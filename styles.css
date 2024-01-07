@@ -1,0 +1,299 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+    background: #000000;
+    color: #fff;
+}
+
+.top-message{
+    font-size: 1rem;
+    text-align: center;
+    padding: .8rem;
+    border-bottom: #1f1f1f solid 1px;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem;
+}
+
+.header h3{
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.header #shopping-cart{
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+}
+
+.header #shopping-cart span{
+    font-size: 0.8rem;
+    background: #ff0000;
+    color: #fff;
+    padding: 0.2rem 0.5rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.content{
+    padding: 1.5rem;
+}
+.content .carousel-controls{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;;
+    margin-bottom: 1rem;
+    width: 100%;
+}
+.content .carousel-controls button{
+    font-size: 1rem;
+    background: #1f1f1f;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    padding: 0.5rem 0.5rem;
+    margin-right: 1rem;
+    border-radius: .8rem;
+}
+.content .carousel-controls button:last-child{
+    margin-left: 1rem;
+    margin-right: 0;
+}
+.content .carousel-controls button:hover, .content .shopping .quantity button:hover{
+    background: #f0581c;
+}
+.content .carousel-controls .carousel .carousel-item img{
+    width: 100%;
+    height: 100%;
+    border-radius: .8rem;
+    object-fit: contain;
+}
+.content .carousel-controls .carousel .carousel-item{
+    display: none;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+.content .carousel-controls .carousel .carousel-item.active{
+    display: block;
+    opacity: 1;
+}
+
+.content .shopping .price{
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.content .shopping .price small{
+    font-size: 0.8rem;
+}
+
+.content .shopping .quantity{
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+.content .shopping .quantity button{
+    font-size: 1rem;
+    background: #1f1f1f;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    padding: 0.5rem 0.5rem;
+}
+
+.content .shopping .quantity button:first-child{
+    margin-right: 1rem;
+    border-bottom-left-radius: .8rem;
+    border-top-left-radius: .8rem;
+}
+.content .shopping .quantity button:last-child{
+    margin-left: 1rem;
+    border-bottom-right-radius: .8rem;
+    border-top-right-radius: .8rem;
+}
+
+#add-to-cart, #pay{
+    font-size: 1rem;
+    background: #f0581c;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    font-weight: 900;
+    text-transform: uppercase;
+    padding: 0.5rem 0.5rem;
+    margin-top: 1rem;
+    width: 100%;
+    border-radius: .8rem;
+
+}
+
+.content .shopping .description{
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+}
+
+.content .shopping .description ul{
+    margin-top: 1rem;
+    padding-left: 1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+
+blockquote{
+    font-size: .8rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    background-color: rgba(255, 255, 255, 0.06);
+    color: #fff;
+    border:rgba(255, 255, 255, .03) solid 2px;
+    font-family: 'Courier New', Courier, monospace;
+    padding: 1.5rem;
+    border-radius: 1rem;
+}
+
+.footer{
+    padding: 1.5rem;
+    text-align: center;
+    font-size: .8rem;
+    border-top: #1f1f1f solid 1px;
+    margin-top: 1rem;
+}
+
+.modal{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .3s ease;
+}
+
+.modal.active{
+    opacity: 1;
+    pointer-events: all;
+}
+.modal #modal-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    font-size: 1.2rem;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    padding: 0.5rem 0.5rem;
+    margin-right: 1rem;
+    border-radius: .8rem;
+}
+
+.modal .modal-content{
+    background: #1f1f1f;
+    padding: 1.5rem;
+    border-radius: .8rem;
+    width: 500px;
+    max-width: 100%;
+    max-height: 90%;
+    overflow-y: scroll;
+    margin: 1rem;
+}
+
+.modal .modal-content .modal-content-info{
+    padding: 1rem 0;
+}
+.modal .modal-content .modal-content-info input, .modal .modal-content .modal-content-info select{
+    font-size: 1rem;
+    background: #1f1f1f;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    padding: 0.5rem 0.5rem;
+    margin-right: 1rem;
+    border-radius: .8rem;
+    width: 100%;
+    margin-bottom: 1rem;
+    border:rgba(255, 255, 255, 0.06) solid 2px;
+    padding: 1rem;
+}
+
+
+.alert-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, .5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 0;
+    pointer-events: none;
+    transition: all .3s ease;
+}
+
+.alert-container.active{
+    opacity: 1;
+    pointer-events: all;
+}
+
+.alert{
+    background: #1f1f1f;
+    border-radius: .8rem;
+    width: 500px;
+    max-width: 100%;
+    max-height: 90%;
+    overflow-y: scroll;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 1rem;
+}
+.alert #alert-text{
+    padding: 1.5rem;
+}
+.alert #alert-close{
+    font-size: .9rem;
+    font-weight: 800;
+    background: #f0581c;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    color: #fff;
+    padding: 1rem;
+    width: 100%;
+}
